@@ -1,1 +1,1 @@
-# WebSkipList
+# This is a high-performance server based on a web server and a skip list database.
