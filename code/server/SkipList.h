@@ -40,17 +40,18 @@ public:
     // 查询用户是否存在
     bool skipFind(const string& key);
 
-    bool changePassword(const string& key);
-
-    // 获取密码
-    string getPassword(const string& key);
+    bool changePassword(const string& key, const string& newvalue);
 
 
-    // 显示跳表
-    void displayList();
+
+
 
     // 析构函数
     ~SkipList();
+
+private:
+    // 获取密码
+    string getPassword(const string& key);
 };
 
 #endif // SKIPLIST_H

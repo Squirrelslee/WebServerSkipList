@@ -74,7 +74,7 @@ bool SkipList::skipFind(const string& key) {
 
 
 //changePassword
-bool SkipList::changePassword(const string& key, const string& value) {
+bool SkipList::changePassword(const string& key, const string& newvalue) {
     if(skipFind(key))
     SkipNode* current = header;
     for(int i = currentLevel - 1; i >= 0; --i) {
@@ -83,7 +83,7 @@ bool SkipList::changePassword(const string& key, const string& value) {
         }
     }
     current = current->forward[0];//find key to change password
-    current->value = value;//change password;
+    current->value = newvalue;//change password;
     return true;
     else
     return false;
@@ -107,18 +107,7 @@ string SkipList::getPassword(const string& key) {
     }
 }
 
-// 显示跳表
-void SkipList::displayList() {
-    for (int i = 0; i < currentLevel; ++i) {
-        SkipNode* current = header->forward[i];
-        cout << "Level " << i << ": ";
-        while (current != nullptr) {
-            cout << "(" << current->key << ", " << current->value << ") ";
-            current = current->forward[i];
-        }
-        cout << endl;
-    }
-}
+
 
 // 跳表析构函数
 SkipList::~SkipList() {
