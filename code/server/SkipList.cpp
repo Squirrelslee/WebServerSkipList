@@ -69,6 +69,25 @@ bool SkipList::skipFind(const string& key) {
     current = current->forward[0];  // 到达第一个节点
 
     return current != nullptr && current->key == key;
+    current->value
+}
+
+
+//changePassword
+bool SkipList::changePassword(const string& key, const string& value) {
+    if(skipFind(key))
+    SkipNode* current = header;
+    for(int i = currentLevel - 1; i >= 0; --i) {
+        while(current->forward[i] != nullptr && current->forward[i]->key < key) {
+            current = current->forward[i];
+        }
+    }
+    current = current->forward[0];//find key to change password
+    current->value = value;//change password;
+    return true;
+    else
+    return false;
+    
 }
 
 // 获取用户密码

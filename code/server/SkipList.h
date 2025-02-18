@@ -40,8 +40,11 @@ public:
     // 查询用户是否存在
     bool skipFind(const string& key);
 
+    bool changePassword(const string& key);
+
     // 获取密码
     string getPassword(const string& key);
+
 
     // 显示跳表
     void displayList();
