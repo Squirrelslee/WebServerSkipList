@@ -18,6 +18,7 @@
 #include "../pool/threadpool.h"
 #include "../pool/sqlconnRAII.h"
 #include "../http/httpconn.h"
+#include "SkipList.h"
 
 class WebServer {
 public:
@@ -60,7 +61,8 @@ private:
     
     uint32_t listenEvent_;
     uint32_t connEvent_;
-   
+
+    SkipList skipList;
     std::unique_ptr<HeapTimer> timer_;
     std::unique_ptr<ThreadPool> threadpool_;
     std::unique_ptr<Epoller> epoller_;
