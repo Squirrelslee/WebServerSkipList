@@ -62,7 +62,7 @@ private:
     uint32_t listenEvent_;
     uint32_t connEvent_;
 
-    SkipList skipList;
+    
     std::unique_ptr<HeapTimer> timer_;
     std::unique_ptr<ThreadPool> threadpool_;
     std::unique_ptr<Epoller> epoller_;

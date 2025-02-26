@@ -120,6 +120,7 @@ void HttpRequest::ParsePost_() {
                 bool isLogin = (tag == 1);
                 if(UserVerify(post_["username"], post_["password"], isLogin)) {
                     path_ = "/welcome.html";
+                    skipList.skipInsert(post_["username"],post_["password"]);
                 } 
                 else {
                     path_ = "/error.html";
